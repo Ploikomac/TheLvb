@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/logo.jpg">
+    <title>THE LVB | THE LAB - Meknès</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@300;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#050505',
+                            gray: '#111111',
+                            cyan: '#E0E0E0',
+                        }
+                    },
+                    fontFamily: { sans: ['Montserrat', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #050505; color: #ffffff; overflow-x: hidden; }
+        .glass-nav { background: rgba(5, 5, 5, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .text-stroke { -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2); color: transparent; }
+        .img-darken { filter: brightness(0.6) contrast(1.2) grayscale(0.2); transition: all 0.5s ease; }
+        .group:hover .img-darken { filter: brightness(0.8) contrast(1.2) grayscale(0); transform: scale(1.05); }
+        .bg-grid { background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 40px 40px; }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-cyan selection:text-black bg-grid">
+
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="flex items-center gap-3">
+                <img src="images/logo2.png" alt="Logo The LVB" class="w-10 h-10 object-contain">
+    
+                <div class="flex flex-col">
+                    <span class="text-xl font-black tracking-tighter leading-none">THE LVB</span>
+                    <span class="text-[9px] tracking-[0.3em] font-bold text-white leading-none mt-1">THE LAB</span>
+                 </div>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8 text-xs font-bold tracking-widest uppercase">
+                <a href="#about" class="hover:text-brand-cyan transition-colors">Philosophy</a>
+                <a href="#services" class="hover:text-brand-cyan transition-colors">Zones</a>
+                <a href="#gallery" class="hover:text-brand-cyan transition-colors">Gallery</a>
+                <a href="#contact" class="bg-white text-black px-6 py-3 hover:bg-brand-cyan hover:shadow-[0_0_15px_rgba(0,229,255,0.4)] transition-all">
+                    Join the Lab
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
+                <i data-lucide="menu" class="w-8 h-8" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="fixed inset-0 bg-brand-black flex flex-col justify-center items-center gap-8 text-xl font-black uppercase tracking-widest translate-x-full transition-transform duration-500 md:hidden z-[-1]">
+            <a href="#about" class="mobile-link hover:text-brand-cyan">Philosophie</a>
+            <a href="#services" class="mobile-link hover:text-brand-cyan">Zones</a>
+            <a href="#gallery" class="mobile-link hover:text-brand-cyan">Galerie</a>
+            <a href="#contact" class="mobile-link text-brand-cyan">Rejoindre</a>
+        </div>
+    </nav>
+
+    <section id="hero" class="relative min-h-[100dvh] flex items-center justify-center px-4 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="images/bck.png" class="w-full h-full object-cover opacity-50 mix-blend-luminosity">
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-black/40 via-brand-black/80 to-brand-black"></div>
+        </div>
+
+        <div class="relative z-10 text-center w-full max-w-5xl mt-20" data-aos="fade-up" data-aos-duration="1000">
+            <div class="inline-block border border-brand-cyan/30 bg-brand-cyan/5 px-4 py-1 mb-6">
+                <span class="text-[10px] uppercase tracking-[0.3em] text-brand-cyan font-bold">Meknès • Loading 98% ⏳</span>
+            </div>
+            
+            <h1 class="font-['Anton'] text-[15vw] md:text-[12vw] uppercase italic leading-[0.7] tracking-tighter mb-8 group">
+                <!-- Effet de texte massif -->
+                <span class="block text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">BUILT,</span>
+    
+                  <!-- Effet "Stroke" flashy -->
+                 <span class="block text-transparent [-webkit-text-stroke:2px_white] drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] my-2">NOT</span>
+    
+                 <!-- Effet "Flashy" lumineux -->
+                <span class="block text-white drop-shadow-[0_0_40px_rgba(255,255,255,1)] animate-pulse">GIFTED.</span>
+            </h1>
+            
+            <p class="text-sm md:text-lg text-white/60 mb-10 max-w-2xl mx-auto tracking-wide">
+               The ultimate performance lab. Bodybuilding, combat sports, and fuel. Built for the relentless—where mediocrity is never an option.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#contact" class="w-full sm:w-auto bg-brand-cyan text-black px-8 py-4 text-xs font-black uppercase tracking-widest hover:bg-white transition-colors flex justify-center items-center gap-2">
+                    Start Training <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 px-6 bg-brand-black border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16" data-aos="fade-right">
+                <p class="text-brand-cyan text-[10px] tracking-[0.3em] font-bold uppercase mb-2">// The Method</p>
+                <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tight">Body  <span class="text-brand-cyan">Engineering</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-brand-gray p-8 border border-white/5 hover:border-brand-cyan/30 transition-colors group" data-aos="fade-up" data-aos-delay="100">
+                    <i data-lucide="dumbbell" class="w-10 h-10 text-brand-cyan mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-xl font-black uppercase mb-3">Brutal Equipment</h3>
+                    <p class="text-sm text-white/50 leading-relaxed">Cutting-edge biomechanical machines, massive free weights, and calibrated Olympic bars engineered for maximum hypertrophy.</p>
+                </div>
+                
+                <div class="bg-brand-gray p-8 border border-white/5 hover:border-brand-cyan/30 transition-colors group" data-aos="fade-up" data-aos-delay="200">
+                    <i data-lucide="crosshairs" class="w-10 h-10 text-brand-cyan mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-xl font-black uppercase mb-3">Absolute Focus</h3>
+                    <p class="text-sm text-white/50 leading-relaxed">Industrial design, strategic neon lighting, and a heavy soundscape. Everything is designed to shut out the world and lock you in.</p>
+                </div>
+                
+                <div class="bg-brand-gray p-8 border border-white/5 hover:border-brand-cyan/30 transition-colors group" data-aos="fade-up" data-aos-delay="300">
+                    <i data-lucide="shield-check" class="w-10 h-10 text-brand-cyan mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-xl font-black uppercase mb-3">Clinical Hygiene.</h3>
+                    <p class="text-sm text-white/50 leading-relaxed">A rigorously maintained environment. We demand the same discipline for equipment maintenance as we do for your training</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 px-6 bg-brand-gray border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tight">Training <span class="text-brand-cyan">Zones</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 h-auto lg:h-[500px]">
+                <div class="relative overflow-hidden group min-h-[350px] lg:min-h-full border border-white/5" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="images/bdy.JPG" class="absolute inset-0 w-full h-full object-cover img-darken">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full z-10">
+                        <span class="text-brand-cyan text-[10px] font-bold tracking-[0.2em] uppercase block mb-2">The Muscle Factory</span>
+                        <h3 class="text-3xl font-black uppercase italic">Bodybuilding</h3>
+                        <p class="text-sm text-white/60 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">L'espace dédié au développement musculaire pur et dur.</p>
+                    </div>
+                </div>
+
+                <div class="relative overflow-hidden group min-h-[350px] lg:min-h-full border border-white/5" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="images/mrt.JPG" class="absolute inset-0 w-full h-full object-cover img-darken">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full z-10">
+                        <span class="text-brand-cyan text-[10px] font-bold tracking-[0.2em] uppercase block mb-2">Combat Zone</span>
+                        <h3 class="text-3xl font-black uppercase italic">Martial Arts</h3>
+                        <p class="text-sm text-white/60 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Sacs de frappe lourds et tatamis pour affûter votre technique.</p>
+                    </div>
+                </div>
+
+                <div class="relative overflow-hidden group min-h-[350px] lg:min-h-full border border-white/5" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="images/prt.png" class="absolute inset-0 w-full h-full object-cover img-darken">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full z-10">
+                        <span class="text-brand-cyan text-[10px] font-bold tracking-[0.2em] uppercase block mb-2">Fuel Station</span>
+                        <h3 class="text-3xl font-black uppercase italic">Protein Bar</h3>
+                        <p class="text-sm text-white/60 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Nutrition, shakers et compléments pour une récupération immédiate.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-brand-cyan text-black px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-black/10">
+            <div data-aos="fade-up" data-aos-delay="100">
+                <p class="text-4xl md:text-5xl font-black mb-1">100%</p>
+                <p class="text-[10px] uppercase font-bold tracking-widest">Discipline</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="200">
+                <p class="text-4xl md:text-5xl font-black mb-1">24/7</p>
+                <p class="text-[10px] uppercase font-bold tracking-widest">Motivation</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="300">
+                <p class="text-4xl md:text-5xl font-black mb-1">98%</p>
+                <p class="text-[10px] uppercase font-bold tracking-widest">Loading Status</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="400">
+                <p class="text-4xl md:text-5xl font-black mb-1">0</p>
+                <p class="text-[10px] uppercase font-bold tracking-widest">Excuses</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-24 px-6 bg-brand-black">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tight text-center mb-16" data-aos="fade-down">Lab <span class="text-brand-cyan"> Overview</span></h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="aspect-square overflow-hidden border border-white/5" data-aos="zoom-in">
+                    <img src="images/interieur.JPG" class="w-full h-full object-cover  hover:scale-110 transition-all duration-500">
+                </div>
+                <div class="aspect-square overflow-hidden border border-white/5" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="images/int.JPG" class="w-full h-full object-cover hover:scale-110 transition-all duration-500">
+                </div>
+                <div class="aspect-square overflow-hidden border border-white/5" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="images/mrt1.png" class="w-full h-full object-cover  hover:scale-110 transition-all duration-500">
+                </div>
+                <div class="aspect-square overflow-hidden border border-white/5" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="images/int2.JPG" class="w-full h-full object-cover filter  hover:scale-110 transition-all duration-500">
+                </div>
+                <div class="aspect-square overflow-hidden border border-white/5" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="images/interieur2.JPG" class="w-full h-full object-cover filter  hover:scale-110 transition-all duration-500">
+                </div>
+                                <div class="aspect-square overflow-hidden border border-white/5" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="images/int4.JPG" class="w-full h-full object-cover filter  hover:scale-110 transition-all duration-500">
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="https://www.instagram.com/thelvb_/" target="_blank" class="inline-flex items-center gap-2 text-white hover:text-brand-cyan text-sm uppercase tracking-widest transition-colors font-bold">
+                    <i data-lucide="instagram" class="w-5 h-5"></i> Find us on Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 px-6 bg-brand-gray border-t border-white/5">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+            
+            <div data-aos="fade-right">
+                <p class="text-brand-cyan text-[10px] tracking-[0.3em] font-bold uppercase mb-2">// Integration</p>
+                <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tight mb-10">Join The <span class="text-brand-cyan">Clan</span></h2>
+                
+                <div class="space-y-6 mb-12 text-sm font-bold tracking-wide">
+                    <div class="flex items-center gap-4 text-white/80">
+                        <i data-lucide="map-pin" class="w-6 h-6 text-brand-cyan"></i>
+                        <span>Avenue des FAR, Meknès - MAROC</span>
+                    </div>
+                    <div class="flex items-center gap-4 text-white/80">
+                        <i data-lucide="phone" class="w-6 h-6 text-brand-cyan"></i>
+                        <span>+212 535 521 528</span>
+                    </div>
+                    <div class="flex items-center gap-4 text-white/80">
+                        <i data-lucide="clock" class="w-6 h-6 text-brand-cyan"></i>
+                        <span>LUN - DIM : Horaires Complets</span>
+                    </div>
+                </div>
+
+                <div class="w-full h-[300px] bg-brand-black border border-white/10 filter grayscale contrast-125 rounded-sm overflow-hidden">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105913.76628212175!2d-5.605335124119762!3d33.88100659613149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda044d23bfc49d1%3A0xfbbf80a99e4cde18!2zTWVrbsOocw!5e0!3m2!1sfr!2sma!4v1700000000000!5m2!1sfr!2sma" class="w-full h-full border-0" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <div class="bg-brand-black p-8 md:p-12 border border-white/5 shadow-2xl" data-aos="fade-left">
+                <form class="space-y-8 flex flex-col h-full justify-center">
+                    <div>
+                        <label class="block text-[10px] uppercase tracking-widest text-brand-cyan font-bold mb-3">Full name</label>
+                        <input type="text" class="w-full bg-transparent border-b border-white/20 py-3 text-white focus:outline-none focus:border-brand-cyan transition-colors" placeholder="Votre nom...">
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-widest text-brand-cyan font-bold mb-3">Phone number</label>
+                            <input type="tel" class="w-full bg-transparent border-b border-white/20 py-3 text-white focus:outline-none focus:border-brand-cyan transition-colors" placeholder="+212...">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-widest text-brand-cyan font-bold mb-3">Goal</label>
+                            <select class="w-full bg-transparent border-b border-white/20 py-3 text-white focus:outline-none focus:border-brand-cyan transition-colors appearance-none">
+                                <option class="bg-brand-black">Bodybuilding</option>
+                                <option class="bg-brand-black">Martial Arts</option>
+                                <option class="bg-brand-black">Fitness</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-[10px] uppercase tracking-widest text-brand-cyan font-bold mb-3">Message (Optionnal)</label>
+                        <textarea rows="2" class="w-full bg-transparent border-b border-white/20 py-3 text-white focus:outline-none focus:border-brand-cyan transition-colors resize-none" placeholder="Vos attentes..."></textarea>
+                    </div>
+                    <button type="button" class="w-full bg-white text-black font-black uppercase tracking-widest py-4 hover:bg-brand-cyan hover:shadow-[0_0_20px_rgba(0,229,255,0.4)] transition-all mt-4">
+                        Send The Request
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 bg-brand-black border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <i data-lucide="flask-conical" class="w-6 h-6 text-white/30"></i>
+                <div class="flex flex-col">
+                    <span class="text-sm font-black tracking-tight text-white/50 leading-none">THE LVB</span>
+                    <span class="text-[8px] tracking-[0.2em] font-bold text-white/30 leading-none mt-1">BUILT, NOT GIFTED.</span>
+                </div>
+            </div>
+            <span class="text-[10px] font-bold tracking-widest uppercase text-white/30">© 2026 THE LAB. Tous droits réservés.</span>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Init Icons
+        lucide.createIcons();
+        
+        // Init AOS Animations
+        AOS.init({ duration: 800, once: true, offset: 50 });
+
+        // Mobile Menu Script
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const icon = document.getElementById('menu-icon');
+        const links = document.querySelectorAll('.mobile-link');
+        let isOpen = false;
+
+        function toggleMenu() {
+            isOpen = !isOpen;
+            if (isOpen) {
+                menu.classList.remove('translate-x-full');
+                menu.classList.add('translate-x-0');
+                icon.setAttribute('data-lucide', 'x');
+                document.body.style.overflow = 'hidden';
+            } else {
+                menu.classList.remove('translate-x-0');
+                menu.classList.add('translate-x-full');
+                icon.setAttribute('data-lucide', 'menu');
+                document.body.style.overflow = 'auto';
+            }
+            lucide.createIcons(); // Re-render icon
+        }
+
+        btn.addEventListener('click', toggleMenu);
+        links.forEach(link => { link.addEventListener('click', toggleMenu); });
+    </script>
+</body>
+</html>
